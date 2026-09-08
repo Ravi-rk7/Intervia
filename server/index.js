@@ -10,13 +10,33 @@ import interviewRouter from "./routes/interview.route.js"
 import paymentRouter from "./routes/payment.route.js"
 
 const app = express()
+app.set("trust proxy", 1)
+
+const allowedOrigins = new Set([
+    "http://localhost:5173",
+    ...((process.env.CLIENT_URL || "")
+        .split(",")
+        .map((origin) => origin.trim().replace(/\/$/, ""))
+        .filter(Boolean))
+])
+
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin(origin, callback) {
+        if (!origin || allowedOrigins.has(origin)) {
+            return callback(null, true)
+        }
+
+        return callback(new Error(`Origin ${origin} is not allowed by CORS`))
+    },
     credentials:true
 }))
 
 app.use(express.json())
 app.use(cookieParser())
+
+app.get("/api/health", (_req, res) => {
+    res.status(200).json({ status: "ok" })
+})
 
 app.use("/api/auth" , authRouter)
 app.use("/api/user", userRouter)
