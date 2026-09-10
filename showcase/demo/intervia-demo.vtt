@@ -1,0 +1,33 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.037
+Meet Intervia
+AI-powered interview practice · React + Express + MongoDB
+
+00:00:06.037 --> 00:00:12.110
+01 / Set your interview context
+Choose a role, experience level, and HR or technical mode.
+
+00:00:12.110 --> 00:00:22.795
+02 / Practice a timed question
+Type an answer in the real interview interface. Voice is simulated in this silent demo.
+
+00:00:22.795 --> 00:00:28.827
+03 / Review answer feedback
+Sample evaluation feedback highlights strengths and a concrete next step.
+
+00:00:28.827 --> 00:00:36.113
+04 / Explore a completed report
+Opening a saved sample session: overall score, skill ratings, and question scores.
+
+00:00:36.113 --> 00:00:41.658
+05 / Turn feedback into practice
+Read per-question feedback. The app also exports the report as a PDF.
+
+00:00:41.658 --> 00:00:48.166
+06 / Revisit previous sessions
+Interview history keeps completed sessions and their reports together.
+
+00:00:48.166 --> 00:00:53.267
+Built for repeatable interview practice
+Explore the project: github.com/Ravi-rk7/Intervia
